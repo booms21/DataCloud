@@ -1,6 +1,6 @@
 # my-vproject
 
-> szl
+> 利用webpack-dev-server代理api获取的数据，打包后需要在服务器实现代理。
 
 ## Build Setup
 
