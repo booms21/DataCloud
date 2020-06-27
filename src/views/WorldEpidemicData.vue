@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="chart1" style="width: 1100px;height:1100px;"></div>
+    <div id="chart1" style="width: 100%;height:100vh;"></div>
   </div>
 </template>
 <script>
@@ -17,7 +17,7 @@ export default {
   },
   mounted () {
     this.$http({
-      url: 'https://myapi.ihogu.com/public/?s=Whfy.count&order=create_time&order_sort=DESC&limit=400',
+      url: `${process.env.ihoguApi}?s=Whfy.count&order=create_time&order_sort=DESC&limit=400`,
       method: 'get'
     })
       .then(response => {
@@ -48,19 +48,27 @@ export default {
         this.confirmArr = confirm;
         this.countryArr = country;
         this.renderChart();
-        console.log(arr);
+       // console.log(arr);
       })
       .catch(function (err) {
         console.log(err);
       });
   },
   methods: {
+    debunce (handler, delay) {
+      var timer = null;
+      return function () {
+        clearTimeout(timer); // 每次都要清除这个定时器
+        timer = setTimeout(() => {
+          handler.apply(this, arguments);
+        }, delay);
+      };
+    },
     renderChart () {
       let echarts1 = echarts.init(document.getElementById('chart1'));
-      console.log(this.countryArr);
+    //  console.log(this.countryArr);
       echarts1.setOption({
         title: {
-     
           subtext: '数据来自网络'
         },
         tooltip: {
@@ -100,6 +108,8 @@ export default {
           }
         ]
       });
+
+      window.addEventListener('resize', this.debunce(echarts1.resize, 1000));
     }
   }
 };

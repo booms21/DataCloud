@@ -51,7 +51,7 @@ export default {
           this.topicsList = this.hotData;
           return;
       }
-        this.$http({ url: `/v2exApi/topics/${subUrl}`, method: 'get' })
+        this.$http({ url: `${process.env.v2exApi}topics/${subUrl}`, method: 'get' })
       .then(response => {
         if (subUrl === 'latest.json') {
           this.latestData = response.data;

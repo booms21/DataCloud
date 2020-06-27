@@ -18,7 +18,7 @@ module.exports = {
         secure: true // 设置支持https协议的代理
       },
       '/ihoguApi': {
-        target: 'https://myapi.ihogu.com/public/',
+        target: 'http://myapi.ihogu.com/public/',
         pathRewrite: {'^/ihoguApi': ''},
         changeOrigin: true, // target是域名的话，需要这个参数，
         secure: true // 设置支持https协议的代理

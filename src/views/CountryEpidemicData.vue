@@ -41,7 +41,7 @@ export default {
       }
       return res;
     };
-    this.$http({ url: '/ihoguApi/?s=Whfy.city', method: 'get' })
+    this.$http({ url: `${process.env.ihoguApi}?s=Whfy.city`, method: 'get' })
       .then(response => {
         this.renderMap(convertData(response.data.data.items));
       })

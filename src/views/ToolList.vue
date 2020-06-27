@@ -3,7 +3,7 @@
   <el-row>
     <el-col class="main-left">
       <el-menu router default-active="2" class="el-menu-vertical-demo" >
-        <el-submenu index="1">
+        <el-submenu index="1" >
           <template slot="title">
             <i class="el-icon-view"></i>
             <span slot="title">数据感知</span>
@@ -33,7 +33,7 @@
         </el-menu-item>
       </el-menu>
     </el-col>
-    <el-col :span="17" class="main-right">
+    <el-col  class="main-right">
       <el-page-header @back="goBack" :content="$route.meta.pageName">
 </el-page-header>
 <keep-alive >
@@ -92,6 +92,7 @@ alert(xx)
 }
 .main-right {
   padding: 1rem;
+  width: calc(100% - 300px);
 }
 .main-left {
     padding: 15px;
