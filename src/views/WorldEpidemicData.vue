@@ -17,7 +17,7 @@ export default {
   },
   mounted () {
     this.$http({
-      url: '/ihoguApi/?s=Whfy.count&order=create_time&order_sort=DESC&limit=400',
+      url: 'https://myapi.ihogu.com/public/?s=Whfy.count&order=create_time&order_sort=DESC&limit=400',
       method: 'get'
     })
       .then(response => {

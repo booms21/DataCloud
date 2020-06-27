@@ -23,7 +23,7 @@ const router = new Router({
       component: () => import('@/views/ToolList'),
       children: [
         {
-          path: '/ToolList/',
+          path: '/ForumList',
           name: 'forumListView',
           meta: {
             pageName: 'V2EX'

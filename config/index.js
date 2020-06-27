@@ -64,7 +64,24 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-
+    proxyTable: {
+      '/v2exApi': {
+        target: 'https://v2ex.com/api/',
+        pathRewrite: {
+          '^/v2exApi': ''
+        },
+        changeOrigin: true, // target是域名的话，需要这个参数，
+        secure: true // 设置支持https协议的代理
+      },
+      '/ihoguApi': {
+        target: 'https://myapi.ihogu.com/public/',
+        pathRewrite: {
+          '^/ihoguApi': ''
+        },
+        changeOrigin: true, // target是域名的话，需要这个参数，
+        secure: true // 设置支持https协议的代理
+      }
+    },
     /**
      * Source Maps
      */

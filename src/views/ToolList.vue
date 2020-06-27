@@ -2,7 +2,7 @@
 <template>
   <el-row>
     <el-col class="main-left">
-      <el-menu router default-active="1-4-1" class="el-menu-vertical-demo" >
+      <el-menu router default-active="2" class="el-menu-vertical-demo" >
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-view"></i>
@@ -10,7 +10,7 @@
           </template>
           <el-menu-item-group>
             <span slot="title">技术论坛api</span>
-            <el-menu-item index="1-1" route="/ToolList/">V2EX</el-menu-item>
+            <el-menu-item index="1-1" route="/ForumList/">V2EX</el-menu-item>
              </el-menu-item-group>
           <el-menu-item-group title="分组2">
           <el-submenu index="1-4">
@@ -19,7 +19,7 @@
           </el-submenu>
              </el-menu-item-group>
         </el-submenu>
-        <el-menu-item index="2" route="/CountryEpidemicData">
+        <el-menu-item index="2"  route="/CountryEpidemicData" >
           <i class="el-icon-s-data"></i>
           <span slot="title">中国新冠肺炎疫情数据</span>
         </el-menu-item>
@@ -81,7 +81,7 @@ alert(xx)
 
 }
 </script>
-<style lang="scss" >
+<style lang="scss" scoped>
 
 .el-menu {
   border: solid 1px #e6e6e6;
@@ -96,10 +96,10 @@ alert(xx)
 .main-left {
     padding: 15px;
    width: 280px;
-   /deep/ .el-submenu{
+  ::v-deep .el-submenu {
           width: 247px;
    }
-  /deep/ .el-menu-vertical-demo{
+  ::v-deep .el-menu-vertical-demo {
     overflow: hidden;
   }
 }
