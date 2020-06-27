@@ -1,6 +1,6 @@
 # my-vproject
 
-> 利用webpack-dev-server代理api获取的数据，打包后需要在服务器实现代理。
+> 开发模式可以利用webpack-dev-server代理api获取V2EX数据。生产环境因为跨域问题V2EX数据需要在服务器软件上实现代理。
 
 ## Build Setup
 
